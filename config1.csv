@@ -1,0 +1,97 @@
+title,url,method,header,auth_required,request_body,success_response,error_response
+Subscription Listing,api/getsubscriptions/,GET,"[{""key"":""Content-Type"",""value"":""application/json"",""description"":""""}]",YES,,"{
+    ""status"": true,
+    ""message"": ""Subscription owner added successfully."",
+    ""data"": {
+        ""name"": ""vishal khoje"",
+        ""username"": ""vish6@gmail.com"",
+        ""account_id"": ""33""
+    }
+}","{
+  ""status"": false,
+  ""message"": ""xxxxxxxxxxx"",
+  ""data"":null
+}"
+Next Lisiting Post Pi,api/addowner,POST,"[{""key"":""Content-Type"",""value"":""application/json"",""description"":""""}]",YES,"{
+  ""first_name"": ""vishal"",
+  ""last_name"": ""khoje"",
+  ""email"":""vish5@gmail.com"",
+  ""phone_no"": """"
+ }","{
+    ""status"": true,
+    ""message"": ""Subscription owner added successfully."",
+    ""data"": {
+        ""name"": ""vishal khoje"",
+        ""username"": ""vish6@gmail.com"",
+        ""account_id"": ""33""
+    }
+}","{
+  ""status"": false,
+  ""message"": ""xxxxxxxxxxx"",
+  ""data"":null
+}"
+Edit Subscription Owner,api/addowner,POST,"[{""key"":""Content-Type"",""value"":""application/json"",""description"":""""}]",YES,"{
+  ""owner_id"":""33"",
+  ""first_name"": ""vishal"",
+  ""last_name"": ""khoje"",
+  ""email"":""vish5@gmail.com"",
+ }","{
+    ""status"": true,
+    ""message"": ""Subscription owner data updated successfully."",
+    ""data"": {
+        ""name"": ""Kiran dhokane"",
+        ""username"": ""kirand@gmail.com"",
+        ""account_id"": 54,
+    }
+}","{
+  ""status"": false,
+  ""message"": ""xxxxxxxxxxx"",
+  ""data"":null
+}"
+Remove Subscription Owner,api/removesubcwner,DETETE,"[{""key"":""Content-Type"",""value"":""application/json"",""description"":""""}]",YES,"{
+  ""owner_id"":""33""
+ }","{
+    ""status"": true,
+    ""message"": ""Subscription owner user remove successfully."",
+    ""data"": null
+}","{
+  ""status"": false,
+  ""message"": ""xxxxxxxxxxx"",
+  ""data"":null
+}"
+Change Subscription Owner,api/changesubcowner,PUT,"[{""key"":""Content-Type"",""value"":""application/json"",""description"":""""}]",YES,"{
+""subscription_id"":1,
+""owner_id"":2
+}","{
+""subscription_id"":1,
+""owner_id"":2
+}","{
+  ""status"": false,
+  ""message"": ""xxxxxxxxxxx"",
+  ""data"":null
+}"
+,,,"[{""key"":""Content-Type"",""value"":""application/json"",""description"":""""}]",YES,,"{
+    ""status"": true,
+    ""message"": ""Subscription owner list get successfully."",
+    ""data"": [
+        {
+            ""id"": 6,
+            ""name"": ""vishal khoje"",
+            ""username"": ""vish@gmail.com""
+        },
+        {
+            ""id"": 7,
+            ""name"": ""XYZ p"",
+            ""username"": ""xyz@gmail.com""
+        },
+        {
+            ""id"": 8,
+            ""name"": ""Kiran D"",
+            ""username"": ""kirand@gmail.com""
+        },
+        ]
+}  ","{
+  ""status"": false,
+  ""message"": ""No data Found"",
+  ""data"":null
+}"

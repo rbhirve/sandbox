@@ -1,0 +1,638 @@
+title ,url,method,header,auth_required,request_body,success_response,error_response
+attendance request ,/request/attendance/count,POST,{access_token},,"{
+  ""month"":""4"",
+  ""year"":""2018""
+}","{""status"":true,""message"":""success"",""data"":{""category"":{""pending"":{""total"":6,""clockin"":1,""update_log"":1,""compoff"":0,""shift_change"":4},""approved"":{""total"":0,""clockin"":0,""update_log"":0,""compoff"":0,""shift_change"":0},""rejected"":{""total"":1,""clockin"":0,""update_log"":0,""compoff"":1,""shift_change"":0},""revoked"":{""total"":0,""clockin"":0,""update_log"":0,""compoff"":0,""shift_change"":0}},""total"":7}}",
+attendance request ,/request/attendance/list,POST,{access_token},,"{
+  ""month"":""4"",
+  ""year"":""2018"",
+  ""request_status"":1,
+  ""att_request_type"": [1,2]
+}","{""status"":true,""message"":""success"",""data"":{""requests"":[{""id"":1,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":1,""att_request_sub_type"":1,""date"":null,""clockin_time"":null,""clockout_time"":null,""buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""created_at"":{""date"":""2018-04-04 00:00:00.000000"",""timezone_type"":3,""timezone"":""UTC""}},{""id"":2,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":2,""att_request_sub_type"":1,""date"":null,""clockin_time"":null,""clockout_time"":null,""buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""created_at"":{""date"":""2018-04-04 00:00:00.000000"",""timezone_type"":3,""timezone"":""UTC""}}]}}",
+attendance request ,request/shift/list,POST,{access_token},,"{
+  ""month"":""4"",
+  ""year"":""2018"",
+  ""request_status"":1,
+  ""att_request_type"":6
+}","{""status"":true,""message"":""success"",""data"":{""requests"":[{""id"":8,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":6,""from_date"":""2018-06-01"",""to_date"":""2018-06-03"",""current_shift_name"":""regular"",""requested_from_time"":""09:00:00"",""requested_to_time"":""06:00:00"",""requested_shift_name"":null,""comment"":null,""button"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular""}]},{""id"":7,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":6,""from_date"":""2018-05-01"",""to_date"":""2018-05-30"",""current_shift_name"":""regular"",""requested_from_time"":null,""requested_to_time"":null,""requested_shift_name"":""regular"",""comment"":null,""button"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular"",""detail"":[{""id"":1,""shift_start_time"":""10:00:00"",""shift_end_time"":""18:00:00"",""early_cutoff_hours"":""09:00:00"",""end_cutoff_hours"":""19:00:00""}]},{""id"":2,""name"":""Afternoon"",""detail"":[{""id"":2,""shift_start_time"":""12:00:00"",""shift_end_time"":""21:00:00"",""early_cutoff_hours"":""11:00:00"",""end_cutoff_hours"":""22:00:00""}]}]},{""id"":6,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":6,""from_date"":""2018-04-28"",""to_date"":""2018-04-29"",""current_shift_name"":""regular"",""requested_from_time"":null,""requested_to_time"":null,""requested_shift_name"":""regular"",""comment"":null,""button"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular"",""detail"":[{""id"":1,""shift_start_time"":""10:00:00"",""shift_end_time"":""18:00:00"",""early_cutoff_hours"":""09:00:00"",""end_cutoff_hours"":""19:00:00""}]},{""id"":2,""name"":""Afternoon"",""detail"":[{""id"":2,""shift_start_time"":""12:00:00"",""shift_end_time"":""21:00:00"",""early_cutoff_hours"":""11:00:00"",""end_cutoff_hours"":""22:00:00""}]}]},{""id"":2,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":6,""from_date"":""2018-04-26"",""to_date"":""2018-04-27"",""current_shift_name"":""regular"",""requested_from_time"":""08:00:00"",""requested_to_time"":""05:00:00"",""requested_shift_name"":""Afternoon"",""comment"":null,""button"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular""}]}]}}",
+attendance request ,request/compoff/list,POST,{access_token},,"{
+  ""month"":""4"",
+  ""year"":""2018"",
+  ""request_status"":1,
+  ""att_request_type"": 5
+}","{""status"":true,""message"":""success"",""data"":{""requests"":[{""id"":1,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""att_request_type"":5,""credited_date"":""2018-04-04"",""compoff_type_id"":1,""credited_balance"":2,""comment"":null,""button"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}]}]}}",
+attendance request ,request/attendance/detail/,POST,{access_token},,"{
+        ""id"": 1,
+        ""att_request_type"": 1
+}","{""status"":true,""message"":""success"",""data"":{""id"":1,""att_request_type"":1,""title"":""Ankit Vishwakarma has applied to update their attendance"",""sub_title"":""25\/04\/2018"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""clock_in"":""25\/04\/2018 07:15:36 am"",""clock_out"":""25\/04\/2018 07:15:36 am""},""request_logs"":[{""message"":""Request was Approved by you On 25\/04\/2018 12:40:20 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:40:06 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:39:54 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 11:28:26 am"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 11:25:33 am"",""actioner_message"":""kabul hai""}],""action_buttons"":[{""control_type"":""button"",""action_id"":3,""text"":""Revoke""}]}}",
+attendance request ,request/attendance/detail/,POST,{access_token},,"{
+        ""id"": 2,
+        ""att_request_type"": 6
+}","{""status"":true,""message"":""success"",""data"":{""id"":1,""att_request_type"":5,""title"":""Compoff request has been generated for Ankit Vishwakarma on 04\/04\/2018 12:00:00 am"",""sub_title"":""-"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""credited_date"":""04\/04\/2018 12:00:00 am"",""credited_balance"":2},""request_logs"":[{""message"":""Request was Revoked by you On 25\/04\/2018 12:33:38 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:33:18 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:32:37 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:32:18 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:16:53 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:16:46 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Rejected by you On 24\/04\/2018 12:44:42 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:44:36 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 12:41:42 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:37:40 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 12:36:14 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:30:34 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 12:28:43 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:25:14 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 11:35:02 am"",""actioner_message"":""kabul hai""}],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}]}}",
+attendance request ,,POST,{access_token},,"{
+        ""id"": 1,
+        ""att_request_type"": 5
+}","{""status"":true,""message"":""success"",""data"":{""id"":1,""att_request_type"":5,""title"":""Compoff request has been generated for Ankit Vishwakarma on 04\/04\/2018 12:00:00 am"",""sub_title"":""-"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""credited_date"":""04\/04\/2018 12:00:00 am"",""credited_balance"":2},""request_logs"":[{""message"":""Request was Revoked by you On 25\/04\/2018 12:33:38 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:33:18 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:32:37 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:32:18 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:16:53 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:16:46 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Rejected by you On 24\/04\/2018 12:44:42 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:44:36 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 12:41:42 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:37:40 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 12:36:14 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:30:34 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 12:28:43 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 24\/04\/2018 12:25:14 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 24\/04\/2018 11:35:02 am"",""actioner_message"":""kabul hai""}],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}]}}",
+attendance request ,request/attendance/detail/,POST,{access_token},,"{
+        ""id"": 2,
+        ""employee_id"": 1,
+        ""month"": 4,
+        ""year"": 2018,
+        ""att_request_type"": 2
+}","{""status"":true,""message"":""success"",""data"":[[{""id"":2,""att_request_type"":2,""title"":""Ankit Vishwakarma has applied to update their attendance"",""sub_title"":""25\/04\/2018"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""clock_in"":""25\/04\/2018 07:21:36 am"",""clock_out"":""25\/04\/2018 07:21:36 am""},""request_logs"":[],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}]}],{""id"":1,""att_request_type"":1,""title"":""Ankit Vishwakarma has applied to update their attendance"",""sub_title"":""25\/04\/2018"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""clock_in"":""25\/04\/2018 07:21:36 am"",""clock_out"":""25\/04\/2018 07:21:36 am""},""request_logs"":[{""message"":""Request was Approved by you On 25\/04\/2018 12:40:20 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:40:06 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:39:54 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 11:28:26 am"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 11:25:33 am"",""actioner_message"":""kabul hai""}],""action_buttons"":[{""control_type"":""button"",""action_id"":3,""text"":""Revoke""}]}]}",
+attendance request ,request/attendance/loademprequest,POST,{access_token},,"{
+        ""id"": 2,
+        ""employee_id"": 1,
+        ""month"": 4,
+        ""year"": 2018,
+        ""att_request_type"": 2
+}","{""status"":true,""message"":""success"",""data"":[[{""id"":2,""att_request_type"":2,""title"":""Ankit Vishwakarma has applied to update their attendance"",""sub_title"":""25\/04\/2018"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""clock_in"":""25\/04\/2018 07:21:36 am"",""clock_out"":""25\/04\/2018 07:21:36 am""},""request_logs"":[],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}]}],{""id"":1,""att_request_type"":1,""title"":""Ankit Vishwakarma has applied to update their attendance"",""sub_title"":""25\/04\/2018"",""time_ago"":""3 weeks ago"",""message"":null,""body"":{""clock_in"":""25\/04\/2018 07:21:36 am"",""clock_out"":""25\/04\/2018 07:21:36 am""},""request_logs"":[{""message"":""Request was Approved by you On 25\/04\/2018 12:40:20 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 12:40:06 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 12:39:54 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Revoked by you On 25\/04\/2018 11:28:26 am"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by you On 25\/04\/2018 11:25:33 am"",""actioner_message"":""kabul hai""}],""action_buttons"":[{""control_type"":""button"",""action_id"":3,""text"":""Revoke""}]}]}",
+attendance request ,request/attendance/loademprequest,POST,{access_token},,"{
+        ""id"": 2,
+        ""employee_id"": 1,
+        ""month"": 4,
+        ""year"": 2018,
+        ""att_request_type"": 6
+}","{""status"":true,""message"":""success"",""data"":[[{""id"":2,""att_request_type"":6,""title"":""Ankit Vishwakarma has applied to change their shift for 26\/04\/2018 to 27\/04\/2018"",""sub_title"":""26\/04\/2018 to 27\/04\/2018"",""time_ago"":""21 hours ago"",""message"":null,""body"":{""from_date"":""26\/04\/2018 12:00:00 am"",""to_date"":""27\/04\/2018 12:00:00 am"",""requested_from_time"":""08:00:00"",""requested_to_time"":""05:00:00""},""request_logs"":[{""message"":""Request was Revoked by Kiran Dhokne On 24\/04\/2018 05:55:48 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by Kiran Dhokne On 24\/04\/2018 03:58:47 pm"",""actioner_message"":""kabul hai""}],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular""}]}],{""id"":8,""att_request_type"":6,""title"":""Ankit Vishwakarma has applied to change their shift for 01\/06\/2018 to 03\/06\/2018"",""sub_title"":""01\/06\/2018 to 03\/06\/2018"",""time_ago"":""18 hours ago"",""message"":null,""body"":{""from_date"":""01\/06\/2018 12:00:00 am"",""to_date"":""03\/06\/2018 12:00:00 am"",""requested_from_time"":""09:00:00"",""requested_to_time"":""06:00:00""},""request_logs"":[],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular""}]},{""id"":7,""att_request_type"":6,""title"":""Kiran Dhokne has applied to update Ankit Vishwakarma\u2019s shift"",""sub_title"":""01\/05\/2018 to 30\/05\/2018"",""time_ago"":""20 hours ago"",""message"":null,""body"":{""from_date"":""01\/05\/2018 12:00:00 am"",""to_date"":""30\/05\/2018 12:00:00 am"",""requested_from_time"":null,""requested_to_time"":null},""request_logs"":[{""message"":""Request was Revoked by Kiran Dhokne On 24\/04\/2018 05:55:47 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by Kiran Dhokne On 24\/04\/2018 04:16:38 pm"",""actioner_message"":null}],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular"",""detail"":[{""id"":1,""shift_start_time"":""10:00:00"",""shift_end_time"":""18:00:00"",""early_cutoff_hours"":""09:00:00"",""end_cutoff_hours"":""19:00:00""}]},{""id"":2,""name"":""Afternoon"",""detail"":[{""id"":2,""shift_start_time"":""12:00:00"",""shift_end_time"":""21:00:00"",""early_cutoff_hours"":""11:00:00"",""end_cutoff_hours"":""22:00:00""}]}]},{""id"":6,""att_request_type"":6,""title"":""Kiran Dhokne has applied to update Ankit Vishwakarma\u2019s shift"",""sub_title"":""28\/04\/2018 to 29\/04\/2018"",""time_ago"":""20 hours ago"",""message"":null,""body"":{""from_date"":""28\/04\/2018 12:00:00 am"",""to_date"":""29\/04\/2018 12:00:00 am"",""requested_from_time"":null,""requested_to_time"":null},""request_logs"":[{""message"":""Request was Revoked by Kiran Dhokne On 24\/04\/2018 05:55:48 pm"",""actioner_message"":""kabul hai""},{""message"":""Request was Approved by Kiran Dhokne On 24\/04\/2018 04:10:23 pm"",""actioner_message"":null}],""action_buttons"":[{""control_type"":""button"",""action_id"":2,""text"":""Approve""},{""control_type"":""button"",""action_id"":4,""text"":""Reject""}],""shifts"":[{""id"":1,""name"":""regular"",""detail"":[{""id"":1,""shift_start_time"":""10:00:00"",""shift_end_time"":""18:00:00"",""early_cutoff_hours"":""09:00:00"",""end_cutoff_hours"":""19:00:00""}]},{""id"":2,""name"":""Afternoon"",""detail"":[{""id"":2,""shift_start_time"":""12:00:00"",""shift_end_time"":""21:00:00"",""early_cutoff_hours"":""11:00:00"",""end_cutoff_hours"":""22:00:00""}]}]}]}",
+attendance request ,request/attendance/action,POST,{access_token},,"{
+  ""requests"": [
+    {
+                ""id"":1,
+                ""action_id"":2,
+                ""att_request_type"": 1,
+                ""actioner_message"":""kabul hai""
+    }
+  ]
+}","{""status"":true,""message"":""success"",""data"":[]}",
+attendance request ,request/attendance/action,POST,{access_token},,"{
+  ""requests"": [
+    {
+                ""id"":2,
+                ""action_id"":2,
+                ""att_request_type"": 6,
+                ""requested_shift_id"": 2,
+                ""actioner_message"":""kabul hai""
+    }
+  ]
+}","{""status"":true,""message"":""success"",""data"":[]}",
+attendance request ,request/attendance/action,,{access_token},,"{
+  ""requests"": [
+    {
+                ""id"":1,
+                ""action_id"":2,
+                ""att_request_type"": 5,
+                ""actioner_message"":""kabul hai""
+    }
+  ]
+}","{""status"":true,""message"":""success"",""data"":[]}",
+attendance request create,/request/attendance/count,POST,{access_token},,"{
+        ""sender_source_id"":1,
+  ""requests"": [
+    {
+            ""employee_id"":4,
+      ""shift_date"": ""2017-03-05"",
+      ""sender_source_id"": 1,
+      ""att_request_type"": 1,
+      ""att_request_sub_type"": 1,
+      ""is_next_day"": 0,
+      ""comment"":""forgot"",
+      ""clockin_time"":""10:00:00"",
+      ""clockout_time"":""18:00:00""
+    }
+  ]
+}","{
+    ""status"": true,
+    ""message"": ""success"",
+    ""data"": null
+}",
+Attendance Request - Work Type Allowed ,/request/attendance/worktype,POST,{access_token},,"{
+        ""employee_id"": 1
+}","{
+    ""status"": true,
+    ""message"": ""success"",
+    ""data"": [
+        {
+            ""att_request_sub_type"": 1,
+            ""name"": ""Work From Office""
+        },
+        {
+            ""att_request_sub_type"": 2,
+            ""name"": ""Work From Home""
+        },
+        {
+            ""att_request_sub_type"": 3,
+            ""name"": ""Out Duty""
+        }
+    ]
+}",
+Auto Generate Request Count,request/autogenerate/action,POST,{access_token},,"{
+""month"": 3,
+""year"" : 2018
+
+}","{""status"":true,""message"":""Success"",""data"":{""request_status"":""Pending"",""period"":{""month"":3,""year"":2018},""request_type"":{""attendance"":{""absent"":5},""leave"":{""absent"":2,""late"":1,""wd"":1}},""total"":9}}",
+Auto Generate Request List,request/autogenerate/list,POST,{access_token},,"{
+""limit"" : 5,
+""offset"" : 0,
+""month"" : 3,
+""year"" : 2018,
+""request_sub_type"": [1]
+}","{""status"":true,""message"":""success"",""data"":{""requests"":[{""id"":3,""employee_id"":3,""full_name"":""Vishal Khoje"",""request_type"":2,""request_sub_type"":1,""date"":""2018-03-15"",""deduction"":null,""is_paid"":""-"",""buttons"":[{""control_type"":""button"",""id"":2,""text"":""Generate""},{""control_type"":""button"",""id"":3,""text"":""Ignore""}]},{""id"":4,""employee_id"":4,""full_name"":""Sanket Bhoir"",""request_type"":2,""request_sub_type"":1,""date"":""2018-03-15"",""deduction"":null,""is_paid"":""-"",""buttons"":[{""control_type"":""button"",""id"":2,""text"":""Generate""},{""control_type"":""button"",""id"":3,""text"":""Ignore""}]},{""id"":7,""employee_id"":5,""full_name"":""Neelam Somarde"",""request_type"":1,""request_sub_type"":1,""date"":""2018-03-15"",""deduction"":null,""is_paid"":""-"",""buttons"":[{""control_type"":""button"",""id"":2,""text"":""Generate""},{""control_type"":""button"",""id"":3,""text"":""Ignore""}]},{""id"":9,""employee_id"":5,""full_name"":""Neelam Somarde"",""request_type"":1,""request_sub_type"":1,""date"":""2018-03-15"",""deduction"":null,""is_paid"":""-"",""buttons"":[{""control_type"":""button"",""id"":2,""text"":""Generate""},{""control_type"":""button"",""id"":3,""text"":""Ignore""}]},{""id"":10,""employee_id"":5,""full_name"":""Neelam Somarde"",""request_type"":1,""request_sub_type"":1,""date"":""2018-03-15"",""deduction"":null,""is_paid"":""-"",""buttons"":[{""control_type"":""button"",""id"":2,""text"":""Generate""},{""control_type"":""button"",""id"":3,""text"":""Ignore""}]}]}}",
+Auto Generate Load Employee Request ,request/autogenerate/loademprequest,POST,{access_token},,"{
+""month"": 3,
+""year"" : 2018,
+""employee_id"": 5,
+""id"": 10
+}","{""status"":true,""message"":""success"",""data"":[[{""id"":10,""request_type"":1,""request_sub_type"":1,""title"":""Attendance update auto-request for Neelam Somarde"",""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":""No attendance was marked for the day""},""action_buttons"":[2,3]}],{""id"":5,""request_type"":2,""request_sub_type"":2,""title"":null,""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":null,""leave_type"":""General""},""action_buttons"":[2,3]},{""id"":6,""request_type"":2,""request_sub_type"":3,""title"":""Leave deduction auto-request for Neelam Somarde"",""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":""Deficit in minimum duration required to count present for full day"",""leave_type"":""General""},""action_buttons"":[2,3]},{""id"":7,""request_type"":1,""request_sub_type"":4,""title"":""Over Time Comp-off for Neelam Somarde"",""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":""Employee has worked for more hours than shift hours""},""action_buttons"":[2,3]},{""id"":8,""request_type"":2,""request_sub_type"":1,""title"":""Leave deduction auto-request for Neelam Somarde"",""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":""No attendance was marked for the day"",""leave_type"":""General""},""action_buttons"":[2,3]},{""id"":9,""request_type"":1,""request_sub_type"":5,""title"":null,""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":""Employee has completed additional working hours required to get comp-off credit""},""action_buttons"":[2,3]}]}",
+Perticular request detail,request/autogenerate/detail/{intRequestId},POST,{access_token},,,"{""status"":true,""message"":""success"",""data"":{""id"":6,""request_type"":2,""request_sub_type"":1,""title"":""Leave deduction auto-request for Neelam Somarde"",""sub_title"":null,""body"":{""from_date"":""2018-03-15"",""to_date"":""2018-03-15"",""reason"":""No attendance was marked for the day"",""leave_type"":""General""},""action_buttons"":[{""control_type"":""button"",""id"":2,""text"":""Generate""},{""control_type"":""button"",""id"":3,""text"":""Ignore""}]}}",
+shift request create,request/shift/list,POST,{access_token},,"{""sender_source_id"":1,""from_date"":""2017-03-09"",""to_date"":""2017-03-09"",""from_time"":""11:00:00"",""to_time"":""13:00:00""}(employee) or  {""sender_source_id"":1,""from_date"":""2017-03-09"",""to_date"":""2017-03-09"",""requested_shift_id"":1}(admin)","{
+    ""status"": true,
+    ""message"": ""success"",
+    ""data"": null
+}",
+shift request metadata,request/shift/metadata,GET,{access_token},,,"{""status"":true,""message"":""success"",""data"":{""reportees"":{""1"":{""id"":2,""full_name"":""Kiran Dhokne""},""2"":{""id"":3,""full_name"":""Vishal Khoje""},""3"":{""id"":4,""full_name"":""Sanket Bhoir""},""4"":{""id"":5,""full_name"":""Neelam Somarde""}},""shifts"":[{""id"":1,""name"":""regular"",""description"":"""",""daily_work_hours"":null,""is_daily_mandatory"":0,""weekly_work_hours"":null,""is_weekly_mandatory"":0,""monthly_work_hours"":null,""is_monthly_mandatory"":0,""shift_type_id"":1,""shift_color"":""#0821db"",""detail"":[{""id"":1,""shift_start_time"":""10:00:00"",""shift_end_time"":""18:00:00"",""is_day_night_shift"":0,""early_cutoff_hours"":""09:00:00"",""end_cutoff_hours"":""19:00:00""}]},{""id"":2,""name"":""Afternoon"",""description"":"""",""daily_work_hours"":null,""is_daily_mandatory"":0,""weekly_work_hours"":null,""is_weekly_mandatory"":0,""monthly_work_hours"":null,""is_monthly_mandatory"":0,""shift_type_id"":1,""shift_color"":""#db7f06"",""detail"":[{""id"":2,""shift_start_time"":""12:00:00"",""shift_end_time"":""21:00:00"",""is_day_night_shift"":0,""early_cutoff_hours"":""11:00:00"",""end_cutoff_hours"":""22:00:00""}]}]}}(admin or manager)  or {""status"":true,""message"":""success"",""data"":{""title"":""You are currently assigned to “regular” and your shift-timings are “10:00:00 to 18:00:00”""}}(employee)",
+Action Leave,/leave/actionleavePOST,,{access_token},,"{
+  ""id"":1,
+  ""sub_leave_type_id"":1,
+  ""action_id"":2,
+  ""action_type"":0,
+  ""comment"": ""Hi""
+ }","{
+    ""status"": true,
+    ""message"": ""Leave approved Successfully"",
+    ""data"": 1
+}",
+Load partcular leave,/leave//request/loadLeave,POST,{access_token},,"{
+        ""id"":1,
+        ""sub_leave_type_id"":1
+}","{
+    ""status"": true,
+    ""message"": ""Load successfully"",
+    ""data"": {
+        ""id"": 2,
+        ""is_unpaid"": 0,
+        ""title"": ""Kushal Pandy has requested a general leave for Ankit Vishwakarma"",
+        ""sub_title"": ""Date: 2018-02-02 to 2018-02-22"",
+        ""comment"": ""Due to overutilizaton,system geneater the request"",
+        ""fields"": [
+            {
+                ""control_type"": ""radio"",
+                ""id"": 4,
+                ""text"": ""Count Full Leave as paid"",
+                ""value"": ""checked""
+            },
+            {
+                ""control_type"": ""radio"",
+                ""id"": 1,
+                ""text"": ""Count Full Leave as unpaid"",
+                ""value"": ""unchecked""
+            }
+        ],
+        ""request_logs"": [],
+        ""action_buttons"": []
+    }
+}",
+Action optional holiday request,leave/request/actionleave,POST,{access_token},,"{
+  ""id"":1,
+  ""sub_leave_type_id"":201,
+  ""action_id"":2,
+  ""comment"": ""Hi""
+ }","{
+    ""status"": true,
+    ""message"": ""Request approved Successfully"",
+    ""data"": 1
+}",
+Load Particular optional holiday request,leave/request/loadleave,POST,{access_token},,"{
+        ""id"":1,
+        ""sub_leave_type_id"":201
+}","{
+    ""status"": true,
+    ""message"": ""Request load successfully"",
+    ""data"": {
+        ""id"": 1,
+        ""is_unpaid"": """",
+        ""title"": ""Kiran Dhokne has applied to update their Optional Holiday"",
+        ""sub_title"": ""Holidays Removed: [ Republican Day ( 2018-04-25 )],[ Crismus Day ( 2018-04-26 )], \n Holidays Added: [ Independent Day ( 2018-04-24 )],"",
+        ""comment"": ""hi"",
+        ""fields"": [],
+        ""request_logs"": [],
+        ""action_buttons"": []
+    }
+}",
+Leave Request  count,request/leave/count,POST,{access_token},,"{
+  ""month"":""3"",
+  ""year"":""2018""
+}","{""status"":true,""message"":""success"",""data"":{""category"":{""pending"":{""plan_type"":{""Comp-off"":{""plan_type_id"":8,""name"":""Comp-off"",""sub_leave_type"":[{""sub_leave_type_id"":75,""name"":""COMPOFF"",""total"":1}],""total"":1},""Basic"":{""plan_type_id"":1,""name"":""Basic"",""sub_leave_type"":[{""sub_leave_type_id"":1,""name"":""General"",""total"":1},{""sub_leave_type_id"":2,""name"":""Earned"",""total"":1}],""total"":2},""UNPAID"":{""plan_type_id"":9,""name"":""UNPAID"",""sub_leave_type"":[{""sub_leave_type_id"":81,""name"":""UNPAID"",""total"":3}],""total"":3},""Short"":{""plan_type_id"":7,""name"":""Short"",""sub_leave_type"":[{""sub_leave_type_id"":61,""name"":""Timed Short"",""total"":1}],""total"":1}},""optional_holiday"":{""total"":2},""total"":9},""approved"":{""plan_type"":{""Basic"":{""plan_type_id"":1,""name"":""Basic"",""sub_leave_type"":[{""sub_leave_type_id"":1,""name"":""General"",""total"":1}],""total"":1},""Parental"":{""plan_type_id"":3,""name"":""Parental"",""sub_leave_type"":[{""sub_leave_type_id"":21,""name"":""Maternity"",""total"":1}],""total"":1},""Short"":{""plan_type_id"":7,""name"":""Short"",""sub_leave_type"":[{""sub_leave_type_id"":61,""name"":""Timed Short"",""total"":1}],""total"":1}},""optional_holiday"":{""total"":2},""total"":5},""rejected"":{""plan_type"":{""UNPAID"":{""plan_type_id"":9,""name"":""UNPAID"",""sub_leave_type"":[{""sub_leave_type_id"":81,""name"":""UNPAID"",""total"":1}],""total"":1},""Short"":{""plan_type_id"":7,""name"":""Short"",""sub_leave_type"":[{""sub_leave_type_id"":61,""name"":""Timed Short"",""total"":1}],""total"":1}},""optional_holiday"":{""total"":2},""total"":4},""revoked"":{""plan_type"":{""Comp-off"":{""plan_type_id"":8,""name"":""Comp-off"",""sub_leave_type"":[{""sub_leave_type_id"":75,""name"":""COMPOFF"",""total"":1}],""total"":1},""Short"":{""plan_type_id"":7,""name"":""Short"",""sub_leave_type"":[{""sub_leave_type_id"":61,""name"":""Timed Short"",""total"":1}],""total"":1}},""optional_holiday"":{""total"":2},""total"":4},""total"":22}}}",
+Leave Request  List,request/leave/list,POST,{access_token},,"{
+  ""month"":""3"",
+  ""year"":""2018"",
+  ""request_status"":2
+ ""sub_leave_type_id"": [1,2] (optional)
+}","{""status"":true,""message"":""success"",""data"":{""leave_requests"":[{""id"":2,""employee_id"":3,""employee_name"":""Vishal Khoje"",""leave_name"":""General"",""form_date"":""2018-03-15"",""to_date"":""2018-03-15"",""total"":1,""buttons"":[{""control_type"":""button"",""id"":3,""text"":""Revoke""}]},{""id"":10,""employee_id"":4,""employee_name"":""Sanket Bhoir"",""leave_name"":""Maternity"",""form_date"":""2018-03-15"",""to_date"":""2018-03-15"",""total"":1,""buttons"":[{""control_type"":""button"",""id"":3,""text"":""Revoke""}]},{""id"":2,""employee_id"":2,""employee_name"":""Kiran Dhokne"",""leave_name"":""Short Leave"",""form_date"":""2018-03-01 00:00:00"",""to_date"":""2018-03-16 00:00:00"",""total"":""04:00:00"",""buttons"":[{""control_type"":""button"",""id"":3,""text"":""Revoke""}]}],""optional_holiday_request"":[{""id"":2,""employee_id"":1,""employee_name"":""Ankit Vishwakarma"",""leave_name"":""Optional Holiday"",""form_date"":""-"",""to_date"":""-"",""total"":""-"",""buttons"":[]},{""id"":6,""employee_id"":2,""employee_name"":""Kiran Dhokne"",""leave_name"":""Optional Holiday"",""form_date"":""-"",""to_date"":""-"",""total"":""-"",""buttons"":[3]}]}}",
+Load All Employee  leave requests,/leave//request/loadempallleaves,POST,{access_token},,"{
+        ""sub_leave_type_id"":1
+}","{
+    ""status"": true,
+    ""message"": ""success"",
+    ""data"": [
+        {
+            ""id"": 10,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a sick"",
+            ""sub_title"": ""Date: 2018-03-22 to 2018-03-23"",
+            ""comment"": ""Hi"",
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 3,
+                    ""text"": ""Revoke""
+                }
+            ]
+        },
+        {
+            ""id"": 11,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a sick"",
+            ""sub_title"": ""Date: 2018-03-24 to 2018-03-24"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 12,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a sick"",
+            ""sub_title"": ""Date: 2018-03-26 to 2018-03-26"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 13,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a sick"",
+            ""sub_title"": ""Date: 2018-03-28 to 2018-03-28"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 14,
+            ""is_unpaid"": 1,
+            ""title"": ""Kiran Dhokne has requested a sick"",
+            ""sub_title"": ""Date: 2018-03-01 to 2018-03-02"",
+            ""comment"": null,
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": []
+        },
+        {
+            ""id"": 13,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a Short Leave"",
+            ""sub_title"": ""Date: 2018-02-20 10:00:00 to 2018-02-20 10:30:00"",
+            ""comment"": ""Hi"",
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 3,
+                    ""text"": ""Revoke""
+                }
+            ]
+        },
+        {
+            ""id"": 10,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a compff w and O"",
+            ""sub_title"": ""Date: 2018-03-22 to 2018-03-23"",
+            ""comment"": ""Hi"",
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 3,
+                    ""text"": ""Revoke""
+                }
+            ]
+        },
+        {
+            ""id"": 11,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a compff w and O"",
+            ""sub_title"": ""Date: 2018-03-24 to 2018-03-24"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 12,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a compff w and O"",
+            ""sub_title"": ""Date: 2018-03-26 to 2018-03-26"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 13,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a compff w and O"",
+            ""sub_title"": ""Date: 2018-03-28 to 2018-03-28"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 14,
+            ""is_unpaid"": 1,
+            ""title"": ""Kiran Dhokne has requested a compff w and O"",
+            ""sub_title"": ""Date: 2018-03-01 to 2018-03-02"",
+            ""comment"": null,
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": []
+        },
+        {
+            ""id"": 10,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a unpaid"",
+            ""sub_title"": ""Date: 2018-03-22 to 2018-03-23"",
+            ""comment"": ""Hi"",
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 3,
+                    ""text"": ""Revoke""
+                }
+            ]
+        },
+        {
+            ""id"": 11,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a unpaid"",
+            ""sub_title"": ""Date: 2018-03-24 to 2018-03-24"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 12,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a unpaid"",
+            ""sub_title"": ""Date: 2018-03-26 to 2018-03-26"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 13,
+            ""is_unpaid"": 0,
+            ""title"": ""Kiran Dhokne has requested a unpaid"",
+            ""sub_title"": ""Date: 2018-03-28 to 2018-03-28"",
+            ""comment"": ""Hi"",
+            ""fields"": [
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 4,
+                    ""text"": ""Count Full Leave as paid"",
+                    ""value"": ""checked""
+                },
+                {
+                    ""control_type"": ""radio"",
+                    ""id"": 1,
+                    ""text"": ""Count Full Leave as unpaid"",
+                    ""value"": ""unchecked""
+                }
+            ],
+            ""request_logs"": [],
+            ""action_buttons"": [
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 2,
+                    ""text"": ""Approve""
+                },
+                {
+                    ""control_type"": ""button"",
+                    ""action_id"": 4,
+                    ""text"": ""Reject""
+                }
+            ]
+        },
+        {
+            ""id"": 14,
+            ""is_unpaid"": 1,
+            ""title"": ""Kiran Dhokne has requested a unpaid"",
+            ""sub_title"": ""Date: 2018-03-01 to 2018-03-02"",
+            ""comment"": null,
+            ""fields"": [],
+            ""request_logs"": [],
+            ""action_buttons"": []
+        }
+    ]
+}",

@@ -1,0 +1,123 @@
+,,,,,,,,,,
+BaseUrl,,,****.sumhr.com,,,,,,,
+,,,,,,,,,,
+Developer,Title,,Endpoint,Method,Headers,Request,Response,,,
+,,,,,,,Success,Failure,,
+,,,,,,,,,Validation (Message),
+,,,,,,,,,,
+Ankit,Config,Brand Details,/subscription/branddetails/{subscription_id},GET,{ access_token },,"{
+    ""status"": true,
+    ""message"": ""Success"",
+    ""data"": {
+        ""subscription_name"": ""sumhr"",
+        ""sub_domain"": ""ABC8"",
+        ""brand_details"": {
+            ""brand_name"": ""jljlkj"",
+            ""default_email_address"": ""sad@sda.com"",
+            ""default_sender_email_address"": ""aSAS"",
+            ""default_sender_name"": ""ddasfafasf"",
+            ""default_sender_signature"": ""888888888888888888888""
+        }
+    }
+}","{
+  ""status"": false,
+  ""message"": "" "",
+  ""data"":null
+}",1)Subscription_id should be owned by the account,apiom
+Ankit,,,/subscription/branddetails,POST,{ access_token },"{""subscription_id"":1,""subscription_name"":""sumhr"",""brand_details"":{""brand_name"":""ABC"",""default_email_address"":""abc@gmail.com"",""default_sender_email_address"":""abcd@gmail.com"",""default_sender_name"":""abc"",""default_sender_signature"":""9090090909090""},""sub_domain"":""ABC8"",""company_logo"":""data:image/jpeg;base64,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""}","{
+  ""status"": true,
+  ""message"": ""success"",
+  ""data"":null
+}","{ ""status"": false, ""message"": ""xxxxx"", ""data"":null }",1. sub_domain must be unique except its own  2)Subscription_id should be owned by the account,
+ANkit,,Global defaults,/subscription/globaldefaults/{subscription_id},GET,{ access_token },,"{""status"":true,""message"":""Success"",""data"":{""subscription_name"":""Sutra services"",""global_defaults"":{""default_country_id"":1,""default_currency_id"":1,""default_timezone_id"":1,""default_financial_cycle_id"":2,""default_leave_cycle_id"":1,""default_date_format_id"":1,""login_method_id"":1},""currencies"":[{""id"":1,""name"":""Rupees"",""code"":""INR"",""symbol"":""₹""},{""id"":2,""name"":""Dollars"",""code"":""USD"",""symbol"":""$""},{""id"":3,""name"":""Euro"",""code"":""EUR"",""symbol"":""€""},{""id"":4,""name"":""Pounds"",""code"":""GBP"",""symbol"":""£""}],""yearly_cycles"":[{""id"":1,""name"":""January""},{""id"":2,""name"":""February""},{""id"":3,""name"":""March""},{""id"":4,""name"":""April""},{""id"":5,""name"":""May""},{""id"":6,""name"":""June""},{""id"":7,""name"":""July""},{""id"":8,""name"":""August""},{""id"":9,""name"":""September""},{""id"":10,""name"":""October""},{""id"":11,""name"":""November""},{""id"":12,""name"":""December""}],""date_formats"":[{""id"":1,""name"":""YYYY/DD/MM H:m:s""},{""id"":2,""name"":""DD/MM/YYYY H:m:s""}],""login_methods"":[{""id"":1,""name"":""Email ID""},{""id"":2,""name"":""Employee No""}]}}","{
+  ""status"": false,
+  ""message"": ""xxxxx"",
+  ""data"":null
+}",,
+ANKIT,,,/subscription/globaldefaults,POST,{ access_token },"{
+  ""subscription_id"":1,
+  ""default_country_id"": 1,
+  ""default_currency_id"": 1,
+  ""default_timezone_id"": 1,
+  ""default_financial_cycle_id"": 1,
+  ""default_leave_cycle_id"": 1,
+  ""default_date_format_id"": 1,
+  ""login_method_id"": 1
+}","{ ""status"": true, ""message"": ""success"", ""data"":null }",,,
+ANKIT,,,/country/timezones/{country_id},GET,{ access_token },,"{
+    ""status"": true,
+    ""message"": ""Success"",
+    ""data"": {
+        ""timezones"": [
+            {
+                ""id"": 1,
+                ""country_id"": 1,
+                ""name"": ""Indian Standard Time"",
+                ""code"": ""IST"",
+                ""offset"": ""UTC+05:30""
+            }
+        ]
+    }
+}",,,
+ANKIT,,Company Offices,subscription/companyoffices/{intSubscriptionId},GET,{ access_token },,"{
+    ""status"": true,
+    ""message"": ""Success"",
+    ""data"": {
+        ""subscription_name"": ""sumhr"",
+        ""company_offices"": [
+            {
+                ""id"": 1,
+                ""subscription_address_type"": 1,
+                ""office_location_name"": ""Andheri"",
+                ""address_line_1"": ""401,Anna purna"",
+                ""address_line_2"": ""Oshivara"",
+                ""city_id"": 1,
+                ""state_id"": 1,
+                ""country_id"": 1,
+                ""pincode"": ""4000053"",
+                ""country_name"": ""India"",
+                ""state_name"": ""Maharashtra"",
+                ""city_name"": ""Mumbai""
+            },
+            {
+                ""id"": 2,
+                ""subscription_address_type"": 0,
+                ""office_location_name"": ""andheri asdasd"",
+                ""address_line_1"": ""asdad dasndjasd"",
+                ""address_line_2"": ""askdaskda dakjsdlkaj dasdhasdk"",
+                ""city_id"": 1,
+                ""state_id"": 1,
+                ""country_id"": 1,
+                ""pincode"": ""1212121"",
+                ""country_name"": ""India"",
+                ""state_name"": ""Maharashtra"",
+                ""city_name"": ""Mumbai""
+            }
+        ]
+    }
+}",,,
+ANKIT,,,subscription/companyoffice/add/,POST,{ access_token },"{
+  ""subscription_id"": 1,
+  ""office_location_name"": ""andheri"",
+  ""address_line_1"": ""asdaad"",
+  ""address_line_2"": ""askdaskd"",
+  ""city_id"": 1,
+  ""state_id"": 1,
+  ""country_id"": 1,
+  ""pincode"": ""1212121""
+}","{ ""status"": true, ""message"": ""success"", ""data"":null }",,,
+ANKIT,,,subscription/companyoffice/edit,POST,{ access_token },"{
+  ""subscription_id"": 1,
+  ""subscription_address_id"":1,
+  ""office_location_name"": ""andheri"",
+  ""address_line_1"": ""asdaad"",
+  ""address_line_2"": ""askdaskd"",
+  ""city_id"": 1,
+  ""state_id"": 1,
+  ""country_id"": 1,
+  ""pincode"": ""1212121""
+}","{ ""status"": true, ""message"": ""success"", ""data"":null }",,,
+ANKIT,,,subscription/companyoffice/delete,DELETE,{ access_token },"{
+  ""subscription_id"": 1,
+  ""subscription_address_id"":1
+}","{ ""status"": true, ""message"": ""success"", ""data"":null }",,,
